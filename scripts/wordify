@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if test "$#" -ne 2; then
-    echo "Welcome to wordify. To convert a text file to docx, type 'wordify <text_file> <docx_name>'"
+    echo "Welcome to wordify.\nTo convert a text file to docx, type 'wordify <text_file> <docx_name>'"
     exit
 fi
 
