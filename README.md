@@ -6,4 +6,8 @@ These are a few scripts put quickly together to allow notes and basic word docs 
 * Very basic - currently only supports converting text files
 * Markdown support coming
 
-To install quickly, just run install.sh, or open the file and follow the commands manually.
+To install quickly, just run:
+
+<code>curl -s https://raw.githubusercontent.com/paddyw2/wordify/master/scripts/install.sh | bash -s arg1 arg2</code>
+
+Or open the <code>install.sh</code> file and follow the commands manually.
