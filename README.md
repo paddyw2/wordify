@@ -11,3 +11,7 @@ To install quickly, just run:
 <code>curl -s https://raw.githubusercontent.com/paddyw2/wordify/master/scripts/install.sh | bash -s arg1 arg2</code>
 
 Or open the <code>install.sh</code> file and follow the commands manually.
+
+To uninstall:
+
+<code>curl -s https://raw.githubusercontent.com/paddyw2/wordify/master/scripts/uninstall.sh | bash -s arg1 arg2</code>
