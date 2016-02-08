@@ -2,7 +2,7 @@
 
 echo 'Installing wordify...'
 cd
-git clone # wordify github directory
+git clone https://github.com/paddyw2/wordify.git
 mv wordify .wordify
 cd .wordify/scripts
 chmod +x wordify
