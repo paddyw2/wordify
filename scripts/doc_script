@@ -1,0 +1,56 @@
+#!/usr/bin/env python
+
+from sys import argv
+import os
+
+# this will change when the default template is
+# reset to having no \n or whitepace
+BODY_TAG = "<w:body>" 
+bodyIndex = 0
+
+# creates xml string for each text line
+def createNewLine(lineString):
+    return "<w:p><w:r><w:t>"+lineString+"</w:t></w:r></w:p>" 
+
+# this will be the filename to copy text from
+
+filename = argv[1]
+
+# get the dir the user is calling the script from
+currentDir = os.getcwd()
+
+# read the current document.xml file
+# and split file based on tags
+f = open(currentDir + "/default/word/document.xml", "r")
+xmlFile = f.read()
+splitFile = xmlFile.split('>')
+f.close()
+
+# fix missing tag lost in split
+for i in range(len(splitFile)-1):
+    splitFile[i] = splitFile[i] + ">"
+
+# finds the body tag list index, as this is
+# the list item that will have the text entered into
+for i in range(len(splitFile)):
+    if splitFile[i] == BODY_TAG:
+        bodyIndex = i
+
+# open the text file to be converted to docx
+origFile = open(currentDir + "/" + filename, "r")
+readFile = origFile.read()
+splitOrig = readFile.split('\n')
+origFile.close()
+
+# for each line in the text file, add an xml-style line
+# to the body tag of document.xml
+for eachLine in splitOrig:
+    addedLine = createNewLine(eachLine)
+    splitFile[bodyIndex] = splitFile[bodyIndex] + addedLine
+
+# write new document.xml file with updated xml string
+nf = open(currentDir + "/default/word/document.xml", "w")
+nf.write("".join(splitFile))
+nf.close()
+
+# script ended

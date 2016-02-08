@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+if test "$#" -ne 2; then
+    echo "Welcome to wordify. To convert a text file to docx, type 'wordify <text_file> <docx_name>'"
+    exit
+fi
+
+filename="$1"
+docname="$2"
+
+echo 'Creating docx file...'
+cp -r ~/.wordify/templates/default .
+python3 ~/.wordify/scripts/doc_script $filename
+cd default
+zip -q -r default.zip *
+cd ..
+mv default/default.zip $docname.docx
+rm -rf default
+echo 'Finished'
