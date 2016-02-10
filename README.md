@@ -3,6 +3,8 @@
 
 These are a few scripts put quickly together to allow notes and basic word docs to be written in vim, or a similar text editor, and be converted quickly to docx files. Part practice, part fun, and maybe part useful.
 
+On OSX, the built-in <code>textutil</code> is probably more useful. For example, <code>textutil -convert docx \<html/text file etc.\></code>. See <a href="https://github.com/paddyw2/marky">marky</a> for more.
+
 * Very basic - currently only supports converting text files
 * Markdown support coming
 
